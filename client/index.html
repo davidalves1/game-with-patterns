@@ -20,62 +20,6 @@
   <div class="wrap">
     <canvas id="screen" width="10" height="10"></canvas>
   </div>
-  <script>
-    const screen = document.querySelector('#screen');
-    const context = screen.getContext('2d');
-
-    const game = {
-      players: {
-        player1: { x: 2, y: 2 },
-        player2: { x: 9, y: 7 },
-      },
-      fruits: {
-        fruit1: { x: 3, y: 5 },
-      }
-    };
-
-    renderScreen();
-
-    window.addEventListener('keyup', (ev) => {
-      switch(ev.key) {
-        case 'ArrowUp':
-          console.log('UP');
-          game.players.player1.y--;
-          break;
-        case 'ArrowRight':
-          console.log('RIGHT');
-          game.players.player1.x++;
-          break;
-        case 'ArrowDown':
-          console.log('DOWN');
-          game.players.player1.y++;
-          break;
-        case 'ArrowLeft':
-          console.log('LEFT');
-          game.players.player1.x--;
-          break;
-      }
-    });
-
-    function renderScreen() {
-      context.fillStyle = 'white';
-      context.fillRect(0, 0, 10, 10);
-      for (playerId in game.players) {
-        const player = game.players[playerId];
-        context.fillStyle = 'blue';
-        context.fillRect(player.x, player.y, 1, 1);
-      }
-
-      for (fruitId in game.fruits) {
-        const fruit = game.fruits[fruitId];
-        context.fillStyle = 'red';
-        context.fillRect(fruit.x, fruit.y, 1, 1);
-      }
-
-      requestAnimationFrame(renderScreen);
-    }
-
-
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
